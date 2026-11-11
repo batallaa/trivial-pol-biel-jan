@@ -7,14 +7,22 @@ export function iniciarJoc(categoria, enAcabar) {
   let preguntaActual = 0;
   let encerts = 0;
 
+  let temps = 15;
+  let interval = null;
+  let respostaBloquejada = false;
+
   function mostrarPregunta() {
 
-    // Si no queden preguntes, acabar
+    // Aturar el temporitzador anterior
+    clearInterval(interval);
+
+    // Final del joc
     if (preguntaActual >= llista.length) {
       enAcabar(encerts, llista.length);
       return;
     }
 
+    respostaBloquejada = false;
     const pregunta = llista[preguntaActual];
 
     document.getElementById("categoria-titol")
@@ -40,9 +48,34 @@ export function iniciarJoc(categoria, enAcabar) {
 
       contenidor.appendChild(boto);
     });
+
+    // Reiniciar el temps per cada pregunta
+    temps = 15;
+    actualitzarTemps();
+
+    interval = setInterval(() => {
+      temps--;
+      actualitzarTemps();
+
+      if (temps <= 0) {
+        respondre(-1);
+      }
+    }, 1000);
+  }
+
+  function actualitzarTemps() {
+    document.getElementById("temporitzador")
+      .textContent = `⏱ Temps: ${temps} segons`;
   }
 
   function respondre(index) {
+
+    // Evitar respondre dues vegades
+    if (respostaBloquejada) return;
+
+    respostaBloquejada = true;
+    clearInterval(interval);
+
     const pregunta = llista[preguntaActual];
 
     if (index === pregunta.correcta) {
