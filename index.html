@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivial - Pol, Biel i Jan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenidor">
+
+    <!-- PANTALLA 1: BENVINGUDA -->
+    <section id="pantalla-inici">
+      <h1>🎮 TRIVIAL</h1>
+      <p>Benvingut al nostre joc!</p>
+
+      <label for="nom">Com et dius?</label>
+      <input id="nom" type="text"
+             placeholder="Escriu el teu nom"
+             maxlength="30">
+
+      <button id="btn-comencar">Començar</button>
+      <p id="error-nom" role="alert"></p>
+    </section>
+
+    <!-- PANTALLA 2: CATEGORIES -->
+    <section id="pantalla-categories" class="hidden">
+      <h2 id="salutacio"></h2>
+      <p>Selecciona una categoria:</p>
+
+      <button id="btn-esports">⚽ Esports</button>
+      <button id="btn-menjar">🍕 Menjar</button>
+    </section>
+
+    <!-- PANTALLA 3: JOC -->
+    <section id="pantalla-joc" class="hidden">
+      <h2 id="categoria-titol"></h2>
+      <p id="numero-pregunta"></p>
+      <p id="temporitzador" role="timer"></p>
+
+      <h3 id="text-pregunta"></h3>
+      <div id="opcions"></div>
+    </section>
+
+    <!-- PANTALLA 4: RESULTATS -->
+    <section id="pantalla-resultats" class="hidden">
+      <h2>🏆 Resultats</h2>
+      <p id="missatge-final"></p>
+      <h3 id="puntuacio"></h3>
+
+      <button id="btn-reiniciar">Tornar a jugar</button>
+      <button id="btn-sortir">Sortir</button>
+    </section>
+
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

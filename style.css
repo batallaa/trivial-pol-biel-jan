@@ -1,0 +1,112 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contenidor {
+  background: white;
+  width: 100%;
+  max-width: 550px;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px #0003;
+  text-align: center;
+}
+
+h1 {
+  font-size: 42px;
+  color: #2563eb;
+}
+
+h2, h3 {
+  color: #1e293b;
+}
+
+p, label {
+  color: #334155;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  background: #2563eb;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+#opcions button {
+  background: #e0e7ff;
+  color: #1e3a8a;
+}
+
+#opcions button:hover {
+  background: #c7d2fe;
+}
+
+#temporitzador {
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#puntuacio {
+  font-size: 26px;
+  color: #16a34a;
+}
+
+#error-nom {
+  color: #dc2626;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Disseny per mòbils */
+@media (max-width: 600px) {
+  .contenidor {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
