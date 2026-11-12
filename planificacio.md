@@ -17,19 +17,6 @@
 8. Permetre tornar a jugar o sortir.
 9. Adaptar el disseny a mòbil.
 
-## Calendari
-### Dimarts 10/11
-Anàlisi, planificació, mockup i GitHub.
-
-### Dimecres 11/11
-Desenvolupament de totes les funcionalitats.
-
-### Dijous 12/11
-Proves, correcció d'errors i entrega.
-
 ## Metodologia
 Utilitzem Kanban amb tres estats:
 Todo, In Progress i Done.
-
-## Seguiment
-Revisarem les tasques en acabar cada jornada.
