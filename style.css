@@ -593,3 +593,40 @@ button:focus-visible {
     transition: none !important;
   }
 }
+
+
+/* RESPUESTA CORRECTA */
+.opciones button.correcta,
+.opciones button.correcta:hover {
+  background: #14532D;
+  border: 2px solid #22C55E;
+  color: #FFFFFF;
+  transform: none;
+}
+
+/* RESPUESTA INCORRECTA */
+.opciones button.incorrecta,
+.opciones button.incorrecta:hover {
+  background: #7F1D1D;
+  border: 2px solid #F87171;
+  color: #FFFFFF;
+  transform: none;
+}
+
+/* BOTONES BLOQUEADOS DESPUÉS DE RESPONDER */
+.opciones button:disabled {
+  cursor: default;
+}
+
+/* TEMPORIZADOR EN LOS ÚLTIMOS 5 SEGUNDOS */
+.timer.tiempo-bajo {
+  color: #F87171;
+  border-color: #F87171;
+  background: #7F1D1D;
+}
+
+/* TRANSICIÓN DE LA BARRA DE PROGRESO */
+.progress-fill {
+  transition: width 0.4s ease;
+}
+
