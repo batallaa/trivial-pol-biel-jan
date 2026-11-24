@@ -1,59 +1,191 @@
 
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trivial - Pol, Biel i Jan</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071426">
+
+  <title>Trivial Challenge</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <!-- CABECERA -->
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">◆</span>
+      <div class="logo-text">
+        <strong>TRIVIAL</strong>
+        <span>CHALLENGE</span>
+      </div>
+    </div>
+
+    <span class="edition">EDICIÓN 2026</span>
+  </header>
+
   <main class="contenidor">
 
-    <!-- PANTALLA 1: BENVINGUDA -->
-    <section id="pantalla-inici">
-      <h1>🎮 TRIVIAL</h1>
-      <p>Benvingut al nostre joc!</p>
+    <!-- PANTALLA 1: INICIO -->
+    <section id="pantalla-inicio" class="pantalla">
 
-      <label for="nom">Com et dius?</label>
-      <input id="nom" type="text"
-             placeholder="Escriu el teu nom"
-             maxlength="30">
+      <div class="hero-icon">✦</div>
 
-      <button id="btn-comencar">Començar</button>
-      <p id="error-nom" role="alert"></p>
+      <span class="etiqueta">EL RETO DEFINITIVO</span>
+
+      <h1>
+        Pon a prueba tus
+        <span>conocimientos.</span>
+      </h1>
+
+      <p class="descripcion">
+        Responde preguntas, supera el tiempo
+        y demuestra cuánto sabes.
+      </p>
+
+      <div class="formulario">
+        <label for="nom">¿Cómo te llamas?</label>
+
+        <input
+          type="text"
+          id="nom"
+          placeholder="Escribe tu nombre..."
+          maxlength="30"
+          autocomplete="off"
+        >
+
+        <p id="error-nom" class="error" role="alert"></p>
+
+        <button id="btn-comencar" class="btn btn-primary">
+          Empezar partida
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <div class="info-juego">
+        <span>3 preguntas</span>
+        <span class="punto"></span>
+        <span>15 segundos</span>
+        <span class="punto"></span>
+        <span>2 categorías</span>
+      </div>
     </section>
 
-    <!-- PANTALLA 2: CATEGORIES -->
-    <section id="pantalla-categories" class="hidden">
+    <!-- PANTALLA 2: CATEGORÍAS -->
+    <section id="pantalla-categories"
+             class="pantalla hidden">
+
+      <span class="etiqueta">SELECCIONA TU RETO</span>
+
       <h2 id="salutacio"></h2>
-      <p>Selecciona una categoria:</p>
 
-      <button id="btn-esports">⚽ Esports</button>
-      <button id="btn-menjar">🍕 Menjar</button>
+      <p class="descripcion">
+        Elige una categoría para comenzar.
+      </p>
+
+      <div class="categorias">
+        <button id="btn-esports"
+                class="categoria-card">
+          <span class="categoria-numero">01</span>
+          <strong>Esports</strong>
+          <span class="categoria-desc">
+            Demuestra cuánto sabes de deporte
+          </span>
+          <span class="categoria-arrow">→</span>
+        </button>
+
+        <button id="btn-menjar"
+                class="categoria-card">
+          <span class="categoria-numero">02</span>
+          <strong>Menjar</strong>
+          <span class="categoria-desc">
+            Pon a prueba tus conocimientos
+            gastronómicos
+          </span>
+          <span class="categoria-arrow">→</span>
+        </button>
+      </div>
+
+      <p class="nota">
+        Cada categoría contiene 3 preguntas.
+      </p>
     </section>
 
-    <!-- PANTALLA 3: JOC -->
-    <section id="pantalla-joc" class="hidden">
-      <h2 id="categoria-titol"></h2>
-      <p id="numero-pregunta"></p>
-      <p id="temporitzador" role="timer"></p>
+    <!-- PANTALLA 3: PREGUNTAS -->
+    <section id="pantalla-joc"
+             class="pantalla hidden">
 
-      <h3 id="text-pregunta"></h3>
-      <div id="opcions"></div>
+      <div class="juego-header">
+        <span id="categoria-titol"
+              class="etiqueta"></span>
+
+        <span id="temporitzador"
+              class="timer"
+              role="timer"></span>
+      </div>
+
+      <p id="numero-pregunta" class="progreso"></p>
+
+      <div class="progress-line">
+        <div class="progress-fill"></div>
+      </div>
+
+      <h2 id="text-pregunta"
+          class="pregunta-titulo"></h2>
+
+      <p class="ayuda">
+        Selecciona la respuesta correcta
+      </p>
+
+      <div id="opcions" class="opciones"></div>
     </section>
 
-    <!-- PANTALLA 4: RESULTATS -->
-    <section id="pantalla-resultats" class="hidden">
-      <h2>🏆 Resultats</h2>
-      <p id="missatge-final"></p>
-      <h3 id="puntuacio"></h3>
+    <!-- PANTALLA 4: RESULTADOS -->
+    <section id="pantalla-resultats"
+             class="pantalla hidden">
 
-      <button id="btn-reiniciar">Tornar a jugar</button>
-      <button id="btn-sortir">Sortir</button>
+      <div class="resultado-icon">★</div>
+
+      <span class="etiqueta">RETO COMPLETADO</span>
+
+      <h2>¡Partida terminada!</h2>
+
+      <p id="missatge-final"
+         class="descripcion"></p>
+
+      <div class="resultado-box">
+        <span class="resultado-label">
+          TU PUNTUACIÓN
+        </span>
+
+        <h3 id="puntuacio"></h3>
+      </div>
+
+      <div class="resultado-botones">
+        <button id="btn-reiniciar"
+                class="btn btn-primary">
+          Volver a jugar
+          <span aria-hidden="true">↻</span>
+        </button>
+
+        <button id="btn-sortir"
+                class="btn btn-secondary">
+          Salir
+        </button>
+      </div>
     </section>
 
   </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <span>Creado por Pol, Biel y Jan</span>
+    <span>Trivial Challenge © 2026</span>
+  </footer>
 
   <script type="module" src="app.js"></script>
 </body>

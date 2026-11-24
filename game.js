@@ -77,6 +77,9 @@ export function iniciarJoc(categoria, enAcabar) {
     clearInterval(interval);
 
     const pregunta = llista[preguntaActual];
+    
+    document.querySelector(".progress-fill").style.width =
+      porcentaje + "%";
 
     if (index === pregunta.correcta) {
       encerts++;
